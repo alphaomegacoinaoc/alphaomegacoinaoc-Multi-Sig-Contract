@@ -17,13 +17,13 @@ _**addSigner(address newSigner)function**_, with these requirements:
 - _**Cannot add** a **zero address**_
 - _**Cannot add an address** that's **already a signer**_
 - **_Cannot add yourself_**
-- **_Maximum** of **5 signers allowed**_
+- _**Maximum** of **5 signers allowed**_
 ## Removing Signers
 Any existing signer can remove another signer using the 
 
 _**removeSigner(address signerToRemove) function**_, with these limitations:
 - _**Only existing signers** can **remove other signers**_
-- **_Cannot remove yourself**_
+- _**Cannot remove yourself**_
 - _**Cannot remove signers**_ if it would _cause the number of signers to **fall below the required approvals**_
 ### How Transactions Work
 #### Transaction Lifecycle
@@ -51,7 +51,7 @@ _Other **signers approve** the **transaction** using **approveTransaction(txId)*
 **The contract includes several security measures:**
 - **Transaction timeout:** _**Proposed transactions expire** **after** a **configurable period**_ (_**default: 2 days**_)
 - **Reentrancy protection:** _Guards against **reentrant attacks**_
-- **Pausability:** **_Emergency** **pause** functionality_
+- **Pausability:** _**Emergency** **pause** functionality_
 - **Input validation:** _Extensive checks on all inputs_
 
 # Example Usage Scenarios
@@ -65,12 +65,12 @@ _To change the transaction timeout:_
 _The contract leverages **several OpenZeppelin libraries**:_
 - **UUPSUpgradeable:** For **_upgradeable contract pattern_**
 - **OwnableUpgradeable:** For **_ownership management_**
-- **ReentrancyGuardUpgradeable:** For **_protection against reentrancy attacks**_
+- **ReentrancyGuardUpgradeable:** For _**protection against reentrancy attacks**_
 - **PausableUpgradeable:** For _emergency **pause** functionality_
 
 ## Read Functions (View Functions)
 - **getSigners():** _Returns an array of **all current signer addresses**_
-- **isSignerApproved(uint256 txId, address signer):**_ **Checks** if **a specific signer has approved** a **specific transaction**_
+- **isSignerApproved(uint256 txId, address signer):** _**Checks** if **a specific signer has approved** a **specific transaction**_
 - **getSignerCount():** _Returns the **current number** of **signers**_
 - **getRequiredApprovals():** _Returns **the number of approvals required** for **transaction execution**_
 - **getTransactionTimeout():** **Returns _the current timeout period_ for _transactions_ (_in seconds_)**
@@ -80,39 +80,39 @@ _The contract leverages **several OpenZeppelin libraries**:_
 - **isSigner(address account):** _Checks if an **address** is a **current signer**_
 - **getApprovalCount(uint256 txId):** _Returns **how many approvals** a **specific transaction has received**_
 - **getTransactionStatus(uint256 txId):** _Returns **the current status of a transaction** (**Pending**, **Executed**, **Expired**)_
-## Write Functions (State-Changing Functions)
-# Transaction Management
-- proposeTransaction(address target, bytes memory data, uint256 value, string memory description): 
-Creates a new transaction proposal and automatically approves it from the proposer
-- approveTransaction(uint256 txId): Approves a pending transaction, executes it if approval threshold is met
-- revokeApproval(uint256 txId): Allows a signer to revoke their previous approval if the transaction is still pending
-- executeTransaction(uint256 txId): Explicitly executes a transaction that has met the approval threshold (typically automatic)
+# Write Functions (State-Changing Functions)
+## Transaction Management
+- **proposeTransaction**(**address** target, **bytes memory data**, uint256 **value**, string memory **description**): 
+_**Creates** a **new transaction proposal** and **automatically approves it from the proposer**_
+- **approveTransaction(uint256 txId):** _**Approves a pending transaction**, **executes** it if **approval threshold is met**_
+- **revokeApproval(uint256 txId):** _**Allows a signer** to **revoke their previous approval** if the **transaction is still pending**_
+- **executeTransaction(uint256 txId):** _**Explicitly executes a transaction** that **has met the approval threshold** (**typically automatic**)_
 
 ## Signer Management
-- addSigner(address newSigner): Adds a new signer to the contract (follows limitations as described in the selection)
-- removeSigner(address signerToRemove): Removes an existing signer (follows limitations as described in the selection)
-- setRequiredApprovals(uint256 newRequired): Changes the number of required approvals for transactions
+- **addSigner(address newSigner):** _**Adds** a **new signer** to the **contract** (**follows limitations as described in the selection**)_
+- **removeSigner(address signerToRemove):** _**Removes** an **existing signer** (**follows limitations as described in the selection**)_
+- **setRequiredApprovals(uint256 newRequired):** _**Changes the number** of **required approvals for transactions**_
 
 ## Configuration Functions
-- setTransactionTimeout(uint256 newTimeout): Updates the transaction expiration timeout
-- pause(): Pauses the contract, preventing new transactions
-- unpause(): Unpauses the contract, allowing transactions again
-- upgradeTo(address newImplementation): Upgrades the contract implementation (UUPS pattern)
+- **setTransactionTimeout(uint256 newTimeout):** _**Updates** the **transaction expiration timeout**_
+- **pause():** _**Pauses** the **contract**, **preventing new transactions**_
+- **unpause():** _**Unpauses** the **contract**, **allowing transactions again**_
+- **upgradeTo(address newImplementation):** _**Upgrades** the **contract implementation** (**UUPS pattern**)_
 
 ## Token Management
-- approveToken(address token, address spender, uint256 amount): Creates a transaction to approve a spender for token transfers
-- transferToken(address token, address recipient, uint256 amount): Creates a transaction to transfer tokens to a recipient
-- batchTransferToken(address token, address[] memory recipients, uint256[] memory amounts): Creates a transaction to transfer tokens to multiple recipients
+- **approveToken**(address **token**, address **spender**, uint256 **amount**): _**Creates** a **transaction** to **approve** a **spender for token transfers**_
+- **transferToken**(address **token**, address **recipient**, uint256 **amount**): _**Creates** a **transaction** to **transfer tokens** to a **recipient**_
+- **batchTransferToken**(address **token**, **address[]** memory **recipients**, uint256[] memory **amounts**): _**Creates** a **transaction** to **transfer tokens** to **multiple recipients**_
 
 ## Events Emitted
-- TransactionProposed(uint256 txId, address proposer): Emitted when a new transaction is proposed
-- TransactionApproved(uint256 txId, address approver): Emitted when a transaction is approved
-- TransactionExecuted(uint256 txId): Emitted when a transaction is executed
-- TransactionExpired(uint256 txId): Emitted when a transaction expires
-- ApprovalRevoked(uint256 txId, address signer): Emitted when an approval is revoked
-- SignerAdded(address newSigner): Emitted when a new signer is added
-- SignerRemoved(address removedSigner): Emitted when a signer is removed
-- RequiredApprovalsChanged(uint256 newRequired): Emitted when required approvals count changes
-- TransactionTimeoutChanged(uint256 newTimeout): Emitted when transaction timeout period changes
+- **TransactionProposed(uint256 txId, address proposer):** _**Emitted** when a **new transaction is proposed**_
+- **TransactionApproved(uint256 txId, address approver):** _**Emitted** when a **transaction** is **approved_**
+- **TransactionExecuted(uint256 txId):** _**Emitted** when a **transaction** is **executed**_
+- **TransactionExpired(uint256 txId):** _**Emitted** when a **transaction expires**_
+- **ApprovalRevoked(uint256 txId, address signer):** _**Emitted** when an **approval is revoked**_
+- **SignerAdded(address newSigner):** _**Emitted** when a **new signer is added**_
+- **SignerRemoved(address removedSigner):** _**Emitted** when a **signer is removed**_
+- **RequiredApprovalsChanged(uint256 newRequired):** _**Emitted** when **required approvals count changes**_
+- **TransactionTimeoutChanged(uint256 newTimeout):** _**Emitted** when **transaction timeout period changes**_
 
 
