@@ -37,8 +37,8 @@ _A signer proposes a transaction using **proposeTransaction()** specifying:_
 
 ## Approval: 
 
-_Other signers approve the transaction using **approveTransaction(txId)**_
-- _Each signer can only approve once_
+_Other **signers approve** the **transaction** using **approveTransaction(txId)**_
+- _Each **signer** can **only approve once**_
 - _**Approvals** are **tracked on-chain**_
 - _**Transaction executes automatically when required approvals are reached**_
 
@@ -49,40 +49,37 @@ _Other signers approve the transaction using **approveTransaction(txId)**_
 - _**Marked** as **expired** if the **timeout period passes**_
 ## Security Features
 **The contract includes several security measures:**
-- **Transaction timeout:** _Proposed transactions expire after a configurable period_ (_**default: 2 days**_)
-- **Reentrancy protection:** _Guards against reentrant attacks_
-- **Pausability:** _Emergency **pause** functionality_
+- **Transaction timeout:** _**Proposed transactions expire** **after** a **configurable period**_ (_**default: 2 days**_)
+- **Reentrancy protection:** _Guards against **reentrant attacks**_
+- **Pausability:** **_Emergency** **pause** functionality_
 - **Input validation:** _Extensive checks on all inputs_
 
 # Example Usage Scenarios
-Scenario: Update Configuration
-To change the transaction timeout:
-Signer proposes a transaction calling setTransactionTimeout()
-Required signers approve
-Configuration is updated when approval threshold is met
-Scenario: Blacklisting a User
-
+#### Scenario: Update Configuration
+_To change the transaction timeout:_
+- **Signer proposes** a **transaction** calling _**setTransactionTimeout()**_
+- _**Required signers approve**_
+- _Configuration is **updated when approval threshold is met**_
 
 ## Technical Details
-The contract leverages several OpenZeppelin libraries:
-UUPSUpgradeable: For upgradeable contract pattern
-OwnableUpgradeable: For ownership management
-ReentrancyGuardUpgradeable: For protection against reentrancy attacks
-PausableUpgradeable: For emergency pause functionality
+_The contract leverages **several OpenZeppelin libraries**:_
+- **UUPSUpgradeable:** For **_upgradeable contract pattern_**
+- **OwnableUpgradeable:** For **_ownership management_**
+- **ReentrancyGuardUpgradeable:** For **_protection against reentrancy attacks**_
+- **PausableUpgradeable:** For _emergency **pause** functionality_
 
 ## Read Functions (View Functions)
-- getSigners(): Returns an array of all current signer addresses
-- isSignerApproved(uint256 txId, address signer): Checks if a specific signer has approved a specific transaction
-- getSignerCount(): Returns the current number of signers
-- getRequiredApprovals(): Returns the number of approvals required for transaction execution
-- getTransactionTimeout(): Returns the current timeout period for transactions (in seconds)
-- getTransaction(uint256 txId): Returns all details of a specific transaction including target, value, data, description, status, etc.
-- getTransactionCount(): Returns the total number of transactions ever proposed
-- isPaused(): Returns whether the contract is currently paused
-- isSigner(address account): Checks if an address is a current signer
-- getApprovalCount(uint256 txId): Returns how many approvals a specific transaction has received
-- getTransactionStatus(uint256 txId): Returns the current status of a transaction (Pending, Executed, Expired)
-
+- **getSigners():** _Returns an array of **all current signer addresses**_
+- **isSignerApproved(uint256 txId, address signer):**_ **Checks** if **a specific signer has approved** a **specific transaction**_
+- **getSignerCount():** _Returns the **current number** of **signers**_
+- **getRequiredApprovals():** _Returns **the number of approvals required** for **transaction execution**_
+- **getTransactionTimeout():** **Returns _the current timeout period_ for _transactions_ (_in seconds_)**
+- **getTransaction(uint256 txId):** _Returns **all details** of a **specific transaction** including **target**, **value**, **data**, **description**, **status**, etc._
+- **getTransactionCount():** _Returns the **total number** of **transactions ever proposed**_
+- **isPaused():** _Returns whether the **contract** is **currently paused**_
+- **isSigner(address account):** _Checks if an **address** is a **current signer**_
+- **getApprovalCount(uint256 txId):** _Returns **how many approvals** a **specific transaction has received**_
+- **getTransactionStatus(uint256 txId):** _Returns **the current status of a transaction** (**Pending**, **Executed**, **Expired**)_
 ## Write Functions (State-Changing Functions)
 # Transaction Management
 - proposeTransaction(address target, bytes memory data, uint256 value, string memory description): 
