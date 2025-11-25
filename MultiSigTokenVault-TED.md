@@ -1,55 +1,58 @@
-## MultiSigTokenVault Contract Overview
-  The MultiSigTokenVault is a secure smart contract that requires multiple signers to approve transactions before execution. This provides enhanced security for managing ERC20 tokens by preventing any single person from transferring funds.
+# MultiSigTokenVault Contract 
+## Overview
+The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **multiple signers**_ to _**approve transactions before execution**_. This provides enhanced **security** for **managing** **ERC20 tokens** by **preventing any single person** from **transferring funds.**
 ## Key Features
-# Multi-signature requirement: Transactions need approval from a configurable number of signers
-# Transaction expiration: Proposed transactions expire after a set time period (default 2 days)
-# Upgradeability: Contract can be upgraded using the UUPS pattern
-# Emergency pause: Signers can pause the contract in case of emergency
-# Signer management: Add or remove signers (up to maximum of 5)
+- **Multi-signature requirement:** _**Transactions need approval**_ from a _**configurable number of signers**._
+- **Transaction expiration:** **_Proposed transactions expire after a set time period_** (**_default 2 days_**)
+- **Upgradeability:** _Contract can be upgraded_ using the **UUPS** pattern
+- **Emergency pause:** _**Signers**_ can _**pause the contract**_ in case of **emergency**
+- **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
 ## How Signer Management Works
-Adding Signers
-Any existing signer can add a new signer to the contract using the 
-addSigner(address newSigner)function, with these requirements:
-Only existing signers can add new signers
-Cannot add a zero address
-Cannot add an address that's already a signer
-Cannot add yourself
-Maximum of 5 signers allowed
-Removing Signers
-Any existing signer can remove another signer using the removeSigner(address signerToRemove) function, with these limitations:
-Only existing signers can remove other signers
-Cannot remove yourself
-Cannot remove signers if it would cause the number of signers to fall below the required approvals
-How Transactions Work
-Transaction Lifecycle
+## Adding Signers
+Any existing signer can add a new signer to the contract using the
+
+_**addSigner(address newSigner)function**_, with these requirements:
+- _**Only existing signers** can **add new signers**_
+- _**Cannot add** a **zero address**_
+- _**Cannot add an address** that's **already a signer**_
+- **_Cannot add yourself_**
+- **_Maximum** of **5 signers allowed**_
+## Removing Signers
+Any existing signer can remove another signer using the 
+
+_**removeSigner(address signerToRemove) function**_, with these limitations:
+- _**Only existing signers** can **remove other signers**_
+- **_Cannot remove yourself**_
+- _**Cannot remove signers**_ if it would _cause the number of signers to **fall below the required approvals**_
+### How Transactions Work
+#### Transaction Lifecycle
 - Every transaction goes through the following lifecycle:
 ## Proposal: 
-
-A signer proposes a transaction using proposeTransaction() specifying:
-Target address (AlphaOmegaCoin Contract Address)
-Data (encoded function call)
-Value (amount of ETH if needed)
-Description (human-readable explanation)
+_A signer proposes a transaction using **proposeTransaction()** specifying:_
+- Target address (_**AOC BEP20 V2.1 Contract Address**_)
+- Data (_**encoded function call**_)
+- Value (**amount of _ETH if needed_**)
+- Description (_**human-readable explanation**_)
 
 ## Approval: 
 
-Other signers approve the transaction using approveTransaction(txId)
-Each signer can only approve once
-Approvals are tracked on-chain
-Transaction executes automatically when required approvals are reached
+_Other signers approve the transaction using **approveTransaction(txId)**_
+- _Each signer can only approve once_
+- _**Approvals** are **tracked on-chain**_
+- _**Transaction executes automatically when required approvals are reached**_
 
 ## Execution or Expiration: 
 
-The transaction is either:
-Executed automatically when approval threshold is met
-Marked as expired if the timeout period passes
-Security Features
-The contract includes several security measures:
-Transaction timeout: Proposed transactions expire after a configurable period (default: 2 days)
-Reentrancy protection: Guards against reentrant attacks
-Pausability: Emergency pause functionality
-Input validation: Extensive checks on all inputs
+**The transaction is either:**
+- _**Executed automatically when approval threshold is met**_
+- _**Marked** as **expired** if the **timeout period passes**_
+## Security Features
+**The contract includes several security measures:**
+- **Transaction timeout:** _Proposed transactions expire after a configurable period_ (_**default: 2 days**_)
+- **Reentrancy protection:** _Guards against reentrant attacks_
+- **Pausability:** _Emergency **pause** functionality_
+- **Input validation:** _Extensive checks on all inputs_
 
 # Example Usage Scenarios
 Scenario: Update Configuration
