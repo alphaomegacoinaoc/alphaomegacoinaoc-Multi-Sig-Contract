@@ -3,7 +3,7 @@
 
 # Technical Explanatory Documentation (TED)
 ## About
-# MultiSigTokenVault Contract 
+# Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract 
 <br>
 
 ## Overview
