@@ -1,4 +1,11 @@
+# Alpha Omega Coin (AOC), The Queen of cryptocurrencies
+<br>
+
+# Technical Explanatory Documentation (TED)
+## About
 # MultiSigTokenVault Contract 
+<br>
+
 ## Overview
 The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **multiple signers**_ to _**approve transactions before execution**_. This provides enhanced **security** for **managing** **ERC20 tokens** by **preventing any single person** from **transferring funds.**
 ## Key Features
