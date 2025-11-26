@@ -39,7 +39,7 @@ _**removeSigner(address signerToRemove) function**_, with these limitations:
 _A signer proposes a transaction using **proposeTransaction()** specifying:_
 - Target address (_**AOC BEP20 V2.1 Contract Address**_)
 - Data (_**encoded function call**_)
-- Value (**amount of _ETH if needed_**)
+- Value (**amount of (_Native Currency_) if needed_**)
 - Description (_**human-readable explanation**_)
 
 ## Approval: 
