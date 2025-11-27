@@ -10,7 +10,7 @@
 The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **multiple signers**_ to _**approve transactions before execution**_. This provides enhanced **security** for **managing** **ERC20 tokens** by **preventing any single person** from **transferring funds.**
 
 # Part 1 : Alpha Omega Coin  (AOC) BEP20 V2.1 Token  Identification Core Details
-- **Name**: Alpha Omega Coin (_**AOC**_)
+- **Name**: Alpha Omega Coin
 - **Symbol**: AOC
 - **Decimals**: 18
 - **Initial Fixed Supply** : 1,000,000,000,000 (**1 trillion**)
