@@ -24,7 +24,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Blacklist**: Multi-Sig Owners can block addresses from sending/receiving tokens for security sake, scam prevention, protection from malicious attacks and also for internal regulations sake
 
 
-# Part 2 : _AOC BEP20 V2.1 Token MultiSigTokenVault Smart Contract Testnet_ + _Mainnet Explorer_ + _Github Repository_
+# Part 2 : _Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Testnet_ + _Mainnet Explorer_ + _Github Repository_
 ## Part 2.1 : AOC BEP20 V2.1 Token MultiSigTokenVault Smart Contract Testnet + Mainnet Codes Identification Urls 
 ### Testnet : 
 **Explorer**:  https://testnet.bscscan.com/address/0x6cddB529f72Dccb700ADCB4C1c26eD01f6562F7E#code
