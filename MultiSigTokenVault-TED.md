@@ -8,6 +8,40 @@
 
 ## Overview
 The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **multiple signers**_ to _**approve transactions before execution**_. This provides enhanced **security** for **managing** **ERC20 tokens** by **preventing any single person** from **transferring funds.**
+
+# Part 1 : Alpha Omega Coin  (AOC) BEP20 V2.1 Token  Identification Core Details
+- **Name**: Alpha Omega Coin (AOC)
+- **Symbol**: AOC
+- **Decimals**: 18
+- **Initial Fixed Supply** : 1,000,000,000,000 (**1 trillion**)
+- **Total Maximum Fixed Supply** : 1,000,000,000,000 (**1 trillion**) _**No minting and No Burning**_
+- **TYPE**: **U**tility, **D**onation, **C**harity and **P**ayment **T**oken (**UDCPT**) 
+- **Network** / **Blockchain**: **B**inance **S**mart **C**hain (**BSC**)
+- **Version** : Version 2.1 (V2.1)
+- **Upgradeability**: Uses OpenZeppelin UUPS (Universal Upgradeable Proxy Standard)
+- **Pausable**: Multi-sig Owners can pause/unpause transfers for security sake, migration sake or for a community-oriented intervention
+- **Blacklist**: Multi-Sig Owners can block addresses from sending/receiving tokens for security sake, scam prevention, protection from malicious attacks and also for internal regulations sake
+
+
+
+
+# Part 2 : AOC BEP20 V2.1 Token MultiSigTokenVault Smart Contract Testnet + Mainnet Codes Identification Urls 
+# Testnet : 
+**Explorer**:  https://testnet.bscscan.com/address/0x6cddB529f72Dccb700ADCB4C1c26eD01f6562F7E#code
+  
+**Github** : 
+- **Branch Name:** Testnet-v1.0.0
+- **Branch Link:** https://github.com/alphaomegacoinaoc/AOC-Bep20-V2-token-distribution-contract/blob/testnet-v2.4/contracts/BulkOperationsV2.1.sol
+
+
+## Mainnet :
+**Explorer**: https://bscscan.com/address/0x4B723e1FCcca5A883fEEf8923701AECbd46fEAd1#readProxyContract
+  
+**Github** : 
+- **Branch Name:** main-v2.1
+- **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
+
+
 ## Key Features
 - **Multi-signature requirement:** _**Transactions need approval**_ from a _**configurable number of signers**._
 - **Transaction expiration:** **_Proposed transactions expire after a set time period_** (**_default 2 days_**)
