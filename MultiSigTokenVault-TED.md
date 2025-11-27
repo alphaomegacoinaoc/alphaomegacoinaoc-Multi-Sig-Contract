@@ -75,7 +75,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Branch Name:** Mainnet-v1.0.0
 - **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
 
-## Part 3 : Alpha Omega Coin (AOC) - MultiSigTokenVault Key Features
+# Part 3 : Alpha Omega Coin (AOC) - MultiSigTokenVault Key Features
 - **Multi-signature requirement:** _**Transactions need approval**_ from a _**configurable number of signers**._
 - **Transaction expiration:** **_Proposed transactions expire after a set time period_** (**_default 2 days_**)
 - **Upgradeability:** _Contract can be upgraded_ using the **UUPS** pattern
