@@ -82,7 +82,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Emergency pause:** _**Signers**_ can _**pause the contract**_ in case of **emergency**
 - **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
-## Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works ?
+# Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works ?
 ## Part 4.1 : Adding Signers
 _Any existing signer can add a new signer to the contract using the_
 _**addSigner(address newSigner)function**_, with these requirements:
@@ -98,7 +98,7 @@ _**removeSigner(address signerToRemove) function**_, with these limitations:
 - _**Only existing signers** can **remove other signers**_
 - _**Cannot remove yourself**_
 - _**Cannot remove signers**_ if it would _cause the number of signers to **fall below the required approvals**_
-## Part 5 : How Transactions Work
+# Part 5 : How Transactions Work
 ## Part 5.1 : Transaction Lifecycle
 - Every transaction goes through the following lifecycle:
 ## Part 5.2 : Proposal: 
@@ -134,8 +134,8 @@ _To change the transaction timeout:_
 - _**Required signers approve**_
 - _Configuration is **updated when approval threshold is met**_
 
-## Part 6: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
-## Read Functions (View Functions)
+# Part 6: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
+## Part 6.1 : Read Functions (View Functions)
 - **getSigners():** _Returns an array of **all current signer addresses**_
 - **isSignerApproved(uint256 txId, address signer):** _**Checks** if **a specific signer has approved** a **specific transaction**_
 - **getSignerCount():** _Returns the **current number** of **signers**_
@@ -147,31 +147,31 @@ _To change the transaction timeout:_
 - **isSigner(address account):** _Checks if an **address** is a **current signer**_
 - **getApprovalCount(uint256 txId):** _Returns **how many approvals** a **specific transaction has received**_
 - **getTransactionStatus(uint256 txId):** _Returns **the current status of a transaction** (**Pending**, **Executed**, **Expired**)_
-# Write Functions (State-Changing Functions)
-## Transaction Management
+# Part 6.2 : Write Functions (State-Changing Functions)
+## Part 6.2.1 : Transaction Management
 - **proposeTransaction**(**address** target, **bytes memory data**, uint256 **value**, string memory **description**): 
 _**Creates** a **new transaction proposal** and **automatically approves it from the proposer**_
 - **approveTransaction(uint256 txId):** _**Approves a pending transaction**, **executes** it if **approval threshold is met**_
 - **revokeApproval(uint256 txId):** _**Allows a signer** to **revoke their previous approval** if the **transaction is still pending**_
 - **executeTransaction(uint256 txId):** _**Explicitly executes a transaction** that **has met the approval threshold** (**typically automatic**)_
 
-## Signer Management
+## Part 6.2.2 : Signer Management
 - **addSigner(address newSigner):** _**Adds** a **new signer** to the **contract** (**follows limitations as described in the selection**)_
 - **removeSigner(address signerToRemove):** _**Removes** an **existing signer** (**follows limitations as described in the selection**)_
 - **setRequiredApprovals(uint256 newRequired):** _**Changes the number** of **required approvals for transactions**_
 
-## Configuration Functions
+## Part 6.2.3 : Configuration Functions
 - **setTransactionTimeout(uint256 newTimeout):** _**Updates** the **transaction expiration timeout**_
 - **pause():** _**Pauses** the **contract**, **preventing new transactions**_
 - **unpause():** _**Unpauses** the **contract**, **allowing transactions again**_
 - **upgradeTo(address newImplementation):** _**Upgrades** the **contract implementation** (**UUPS pattern**)_
 
-## Token Management
+## Part 6.2.4 : Token Management
 - **approveToken**(address **token**, address **spender**, uint256 **amount**): _**Creates** a **transaction** to **approve** a **spender for token transfers**_
 - **transferToken**(address **token**, address **recipient**, uint256 **amount**): _**Creates** a **transaction** to **transfer tokens** to a **recipient**_
 - **batchTransferToken**(address **token**, **address[]** memory **recipients**, uint256[] memory **amounts**): _**Creates** a **transaction** to **transfer tokens** to **multiple recipients**_
 
-## Events Emitted
+## Part 6.2.5 : Events Emitted
 - **TransactionProposed(uint256 txId, address proposer):** _**Emitted** when a **new transaction is proposed**_
 - **TransactionApproved(uint256 txId, address approver):** _**Emitted** when a **transaction** is **approved_**
 - **TransactionExecuted(uint256 txId):** _**Emitted** when a **transaction** is **executed**_
@@ -182,7 +182,7 @@ _**Creates** a **new transaction proposal** and **automatically approves it from
 - **RequiredApprovalsChanged(uint256 newRequired):** _**Emitted** when **required approvals count changes**_
 - **TransactionTimeoutChanged(uint256 newTimeout):** _**Emitted** when **transaction timeout period changes**_
 
-## Part 7 : Technical Details
+# Part 7 : Technical Details
 _The contract leverages **several OpenZeppelin libraries**:_
 - **UUPSUpgradeable:** For **_upgradeable contract pattern_**
 - **OwnableUpgradeable:** For **_ownership management_**
