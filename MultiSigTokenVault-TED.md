@@ -82,7 +82,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Emergency pause:** _**Signers**_ can _**pause the contract**_ in case of **emergency**
 - **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
-## Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works
+## Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works ?
 ## Adding Signers
 _Any existing signer can add a new signer to the contract using the_
 _**addSigner(address newSigner)function**_, with these requirements:
@@ -134,14 +134,7 @@ _To change the transaction timeout:_
 - _**Required signers approve**_
 - _Configuration is **updated when approval threshold is met**_
 
-## Part 5 : Technical Details
-_The contract leverages **several OpenZeppelin libraries**:_
-- **UUPSUpgradeable:** For **_upgradeable contract pattern_**
-- **OwnableUpgradeable:** For **_ownership management_**
-- **ReentrancyGuardUpgradeable:** For _**protection against reentrancy attacks**_
-- **PausableUpgradeable:** For _emergency **pause** functionality_
-
-## Part 6: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
+## Part 5: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
 ## Read Functions (View Functions)
 - **getSigners():** _Returns an array of **all current signer addresses**_
 - **isSignerApproved(uint256 txId, address signer):** _**Checks** if **a specific signer has approved** a **specific transaction**_
@@ -188,5 +181,12 @@ _**Creates** a **new transaction proposal** and **automatically approves it from
 - **SignerRemoved(address removedSigner):** _**Emitted** when a **signer is removed**_
 - **RequiredApprovalsChanged(uint256 newRequired):** _**Emitted** when **required approvals count changes**_
 - **TransactionTimeoutChanged(uint256 newTimeout):** _**Emitted** when **transaction timeout period changes**_
+
+## Part 6 : Technical Details
+_The contract leverages **several OpenZeppelin libraries**:_
+- **UUPSUpgradeable:** For **_upgradeable contract pattern_**
+- **OwnableUpgradeable:** For **_ownership management_**
+- **ReentrancyGuardUpgradeable:** For _**protection against reentrancy attacks**_
+- **PausableUpgradeable:** For _emergency **pause** functionality_
 
 
