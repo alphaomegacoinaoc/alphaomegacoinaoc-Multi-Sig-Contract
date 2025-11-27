@@ -75,17 +75,16 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Branch Name:** Mainnet-v1.0.0
 - **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
 
-## Alpha Omega Coin (AOC) - MultiSigTokenVault Key Features
+## Part 3 : Alpha Omega Coin (AOC) - MultiSigTokenVault Key Features
 - **Multi-signature requirement:** _**Transactions need approval**_ from a _**configurable number of signers**._
 - **Transaction expiration:** **_Proposed transactions expire after a set time period_** (**_default 2 days_**)
 - **Upgradeability:** _Contract can be upgraded_ using the **UUPS** pattern
 - **Emergency pause:** _**Signers**_ can _**pause the contract**_ in case of **emergency**
 - **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
-## Part 3 How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works
+## Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works
 ## Adding Signers
-Any existing signer can add a new signer to the contract using the
-
+_Any existing signer can add a new signer to the contract using the_
 _**addSigner(address newSigner)function**_, with these requirements:
 - _**Only existing signers** can **add new signers**_
 - _**Cannot add** a **zero address**_
@@ -128,7 +127,7 @@ _Other **signers approve** the **transaction** using **approveTransaction(txId)*
 - **Pausability:** _**Emergency** **pause** functionality_
 - **Input validation:** _Extensive checks on all inputs_
 
-# Example Usage Scenarios
+## Example Usage Scenarios
 #### Scenario: Update Configuration
 _To change the transaction timeout:_
 - **Signer proposes** a **transaction** calling _**setTransactionTimeout()**_
