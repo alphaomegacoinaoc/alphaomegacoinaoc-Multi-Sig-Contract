@@ -10,7 +10,7 @@
 The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **multiple signers**_ to _**approve transactions before execution**_. This provides enhanced **security** for **managing** **ERC20 tokens** by **preventing any single person** from **transferring funds.**
 
 # Part 1 : Alpha Omega Coin  (AOC) BEP20 V2.1 Token  Identification Core Details
-- **Name**: Alpha Omega Coin (AOC)
+- **Name**: Alpha Omega Coin (_**AOC**_)
 - **Symbol**: AOC
 - **Decimals**: 18
 - **Initial Fixed Supply** : 1,000,000,000,000 (**1 trillion**)
@@ -18,7 +18,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **TYPE**: **U**tility, **D**onation, **C**harity and **P**ayment **T**oken (**UDCPT**) 
 - **Network** / **Blockchain**: **B**inance **S**mart **C**hain (**BSC**)
 - **Standard:** _**B**inance Smart Chain_ **E**volution **P**roposal **20** (**_BEP20_**)
-- **Version** : Version 2.1 (V2.1)
+- **Version** : Version 2.1 (_**V2.1**_)
 - **Upgradeability**: Uses OpenZeppelin UUPS (Universal Upgradeable Proxy Standard)
 - **Pausable**: Multi-sig Owners can pause/unpause transfers for security sake, migration sake or for a community-oriented intervention
 - **Blacklist**: Multi-Sig Owners can block addresses from sending/receiving tokens for security sake, scam prevention, protection from malicious attacks and also for internal regulations sake
@@ -43,14 +43,14 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
 
 
-## Key Features
+## Alpha Omega Coin (AOC) - MultiSigTokenVault Key Features
 - **Multi-signature requirement:** _**Transactions need approval**_ from a _**configurable number of signers**._
 - **Transaction expiration:** **_Proposed transactions expire after a set time period_** (**_default 2 days_**)
 - **Upgradeability:** _Contract can be upgraded_ using the **UUPS** pattern
 - **Emergency pause:** _**Signers**_ can _**pause the contract**_ in case of **emergency**
 - **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
-## How Signer Management Works
+## Part 3 How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works
 ## Adding Signers
 Any existing signer can add a new signer to the contract using the
 
@@ -103,13 +103,14 @@ _To change the transaction timeout:_
 - _**Required signers approve**_
 - _Configuration is **updated when approval threshold is met**_
 
-## Technical Details
+## Part 5 : Technical Details
 _The contract leverages **several OpenZeppelin libraries**:_
 - **UUPSUpgradeable:** For **_upgradeable contract pattern_**
 - **OwnableUpgradeable:** For **_ownership management_**
 - **ReentrancyGuardUpgradeable:** For _**protection against reentrancy attacks**_
 - **PausableUpgradeable:** For _emergency **pause** functionality_
 
+## Part 6: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
 ## Read Functions (View Functions)
 - **getSigners():** _Returns an array of **all current signer addresses**_
 - **isSignerApproved(uint256 txId, address signer):** _**Checks** if **a specific signer has approved** a **specific transaction**_
