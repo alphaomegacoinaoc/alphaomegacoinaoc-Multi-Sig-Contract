@@ -83,7 +83,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Signer management:** **Add** or **remove** **signers** (_up to maximum of 5_)
 
 ## Part 4 : How Alpha Omega Coin (AOC) - MultiSigTokenVault Signer Management Works ?
-## Adding Signers
+## Part 4.1 : Adding Signers
 _Any existing signer can add a new signer to the contract using the_
 _**addSigner(address newSigner)function**_, with these requirements:
 - _**Only existing signers** can **add new signers**_
@@ -91,50 +91,50 @@ _**addSigner(address newSigner)function**_, with these requirements:
 - _**Cannot add an address** that's **already a signer**_
 - **_Cannot add yourself_**
 - _**Maximum** of **5 signers allowed**_
-## Removing Signers
+## Part 4.2 : Removing Signers
 Any existing signer can remove another signer using the 
 
 _**removeSigner(address signerToRemove) function**_, with these limitations:
 - _**Only existing signers** can **remove other signers**_
 - _**Cannot remove yourself**_
 - _**Cannot remove signers**_ if it would _cause the number of signers to **fall below the required approvals**_
-### How Transactions Work
-#### Transaction Lifecycle
+## Part 5 : How Transactions Work
+## Part 5.1 : Transaction Lifecycle
 - Every transaction goes through the following lifecycle:
-## Proposal: 
+## Part 5.2 : Proposal: 
 _A signer proposes a transaction using **proposeTransaction()** specifying:_
 - Target address (_**AOC BEP20 V2.1 Contract Address**_)
 - Data (_**encoded function call**_)
 - Value (**amount of (_Native Currency_) if needed**)
 - Description (_**human-readable explanation**_)
 
-## Approval: 
+## Part 5.3 : Approval: 
 
 _Other **signers approve** the **transaction** using **approveTransaction(txId)**_
 - _Each **signer** can **only approve once**_
 - _**Approvals** are **tracked on-chain**_
 - _**Transaction executes automatically when required approvals are reached**_
 
-## Execution or Expiration: 
+## Part 5.4 : Execution or Expiration: 
 
 **The transaction is either:**
 - _**Executed automatically when approval threshold is met**_
 - _**Marked** as **expired** if the **timeout period passes**_
-## Security Features
+## Part 5.5 : Security Features
 **The contract includes several security measures:**
 - **Transaction timeout:** _**Proposed transactions expire** **after** a **configurable period**_ (_**default: 2 days**_)
 - **Reentrancy protection:** _Guards against **reentrant attacks**_
 - **Pausability:** _**Emergency** **pause** functionality_
 - **Input validation:** _Extensive checks on all inputs_
 
-## Example Usage Scenarios
+## Part 5.6 : Example Usage Scenarios
 #### Scenario: Update Configuration
 _To change the transaction timeout:_
 - **Signer proposes** a **transaction** calling _**setTransactionTimeout()**_
 - _**Required signers approve**_
 - _Configuration is **updated when approval threshold is met**_
 
-## Part 5: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
+## Part 6: Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Read + Write Functions
 ## Read Functions (View Functions)
 - **getSigners():** _Returns an array of **all current signer addresses**_
 - **isSignerApproved(uint256 txId, address signer):** _**Checks** if **a specific signer has approved** a **specific transaction**_
@@ -182,7 +182,7 @@ _**Creates** a **new transaction proposal** and **automatically approves it from
 - **RequiredApprovalsChanged(uint256 newRequired):** _**Emitted** when **required approvals count changes**_
 - **TransactionTimeoutChanged(uint256 newTimeout):** _**Emitted** when **transaction timeout period changes**_
 
-## Part 6 : Technical Details
+## Part 7 : Technical Details
 _The contract leverages **several OpenZeppelin libraries**:_
 - **UUPSUpgradeable:** For **_upgradeable contract pattern_**
 - **OwnableUpgradeable:** For **_ownership management_**
