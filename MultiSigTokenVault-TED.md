@@ -17,6 +17,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Total Maximum Fixed Supply** : 1,000,000,000,000 (**1 trillion**) _**No minting and No Burning**_
 - **TYPE**: **U**tility, **D**onation, **C**harity and **P**ayment **T**oken (**UDCPT**) 
 - **Network** / **Blockchain**: **B**inance **S**mart **C**hain (**BSC**)
+- **Standard:** _**B**inance Smart Chain_ **E**volution **P**roposal **20** (**_BEP20_**)
 - **Version** : Version 2.1 (V2.1)
 - **Upgradeability**: Uses OpenZeppelin UUPS (Universal Upgradeable Proxy Standard)
 - **Pausable**: Multi-sig Owners can pause/unpause transfers for security sake, migration sake or for a community-oriented intervention
