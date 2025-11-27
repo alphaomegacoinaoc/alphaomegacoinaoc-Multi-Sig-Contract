@@ -147,7 +147,7 @@ _To change the transaction timeout:_
 - **isSigner(address account):** _Checks if an **address** is a **current signer**_
 - **getApprovalCount(uint256 txId):** _Returns **how many approvals** a **specific transaction has received**_
 - **getTransactionStatus(uint256 txId):** _Returns **the current status of a transaction** (**Pending**, **Executed**, **Expired**)_
-# Part 6.2 : Write Functions (State-Changing Functions)
+## Part 6.2 : Write Functions (State-Changing Functions)
 ## Part 6.2.1 : Transaction Management
 - **proposeTransaction**(**address** target, **bytes memory data**, uint256 **value**, string memory **description**): 
 _**Creates** a **new transaction proposal** and **automatically approves it from the proposer**_
