@@ -24,8 +24,8 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Blacklist**: Multi-Sig Owners can block addresses from sending/receiving tokens for security sake, scam prevention, protection from malicious attacks and also for internal regulations sake
 
 
-# Part 2 : _Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contract Testnet_ + _Mainnet Explorer_ + _Github Repository_
-## Part 2.1 : AOC BEP20 V2.1 Token MultiSigTokenVault Smart Contract Testnet + Mainnet Codes Identification Urls 
+# Part 2 : _Alpha Omega Coin (AOC) - MultiSigTokenVault Smart Contracts Testnet_ + _Mainnet Explorer_ + _Github Repository_
+## Part 2.1 : _AOC BEP20 V2.1 Token MultiSigTokenVault Smart Contract Testnet + Mainnet Codes Identification Urls_
 ### Testnet : 
 **Explorer**:  https://testnet.bscscan.com/address/0x6cddB529f72Dccb700ADCB4C1c26eD01f6562F7E#code
   
@@ -41,7 +41,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Branch Name:** main-v2.1
 - **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
 
-## Part 2.2 : AOC BEP20 V2.1 Token BulkOperations  Multi-Sig Smart Contract Testnet + Mainnet Codes Identification Urls Testnet 
+## Part 2.2 : _AOC BEP20 V2.1 Token BulkOperations  Multi-Sig Smart Contract Testnet + Mainnet Codes Identification Urls Testnet_ 
 ### Testnet : 
 **Explorer**:  https://testnet.bscscan.com/address/0x115D01dD6723ed1BC0DF2EB6A64350341a29fbBC#code
   
@@ -57,7 +57,7 @@ The **MultiSigTokenVault** is a **secure smart contract** that _**requires** **m
 - **Branch Name:** Mainnet-v1.0.0
 - **Branch Link:** https://github.com/alphaomegacoinaoc/alphaomegacoinaoc-Multi-Sig-Contract/blob/Mainnet-v1.0.0/MultiSigTokenVault.sol
 
-## Part 2.3 : Alpha Omega Coin  (AOC) BEP20 V2.1 and ERC20 V3 Locker Multi-Sig Smart Contract Testnet + Mainnet Codes Identification Urls 
+## Part 2.3 : _Alpha Omega Coin  (AOC) BEP20 V2.1 and ERC20 V3 Locker Multi-Sig Smart Contract Testnet + Mainnet Codes Identification Urls_ 
 ### Testnet : _(Amoy)_
 **Explorer:**  https://amoy.polygonscan.com/address/0x59952eE49399E847fC4550a06911Ca75a637D302#code
 
